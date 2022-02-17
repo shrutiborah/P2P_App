@@ -12,14 +12,27 @@
         <entry key="..\:/Users/shruti/AndroidStudioProjects/P2P_App/app/src/main/res/drawable/ic_baseline_arrow_back_ios_24.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/shruti/AndroidStudioProjects/P2P_App/app/src/main/res/drawable/ic_nfo.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/shruti/AndroidStudioProjects/P2P_App/app/src/main/res/layout/activity_chat2.xml" value="0.22" />
+        <entry key="..\:/Users/shruti/AndroidStudioProjects/P2P_App/app/src/main/res/layout/activity_editprofile.xml" value="0.1796875" />
+        <entry key="..\:/Users/shruti/AndroidStudioProjects/P2P_App/app/src/main/res/layout/activity_forgotpassword.xml" value="0.4407894736842105" />
         <entry key="..\:/Users/shruti/AndroidStudioProjects/P2P_App/app/src/main/res/layout/activity_home.xml" value="0.1" />
-        <entry key="..\:/Users/shruti/AndroidStudioProjects/P2P_App/app/src/main/res/layout/activity_login.xml" value="0.1" />
-        <entry key="..\:/Users/shruti/AndroidStudioProjects/P2P_App/app/src/main/res/layout/fragment_dashboard.xml" value="0.14473684210526316" />
+        <entry key="..\:/Users/shruti/AndroidStudioProjects/P2P_App/app/src/main/res/layout/activity_login.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/shruti/AndroidStudioProjects/P2P_App/app/src/main/res/layout/activity_main.xml" value="0.16530797101449277" />
+        <entry key="..\:/Users/shruti/AndroidStudioProjects/P2P_App/app/src/main/res/layout/activity_material.xml" value="0.165625" />
+        <entry key="..\:/Users/shruti/AndroidStudioProjects/P2P_App/app/src/main/res/layout/activity_my_materials.xml" value="0.1796875" />
+        <entry key="..\:/Users/shruti/AndroidStudioProjects/P2P_App/app/src/main/res/layout/activity_my_profile.xml" value="0.12" />
+        <entry key="..\:/Users/shruti/AndroidStudioProjects/P2P_App/app/src/main/res/layout/activity_reset_password.xml" value="0.22" />
+        <entry key="..\:/Users/shruti/AndroidStudioProjects/P2P_App/app/src/main/res/layout/activity_upload.xml" value="0.38333333333333336" />
+        <entry key="..\:/Users/shruti/AndroidStudioProjects/P2P_App/app/src/main/res/layout/activity_uploadimg.xml" value="0.1796875" />
+        <entry key="..\:/Users/shruti/AndroidStudioProjects/P2P_App/app/src/main/res/layout/activity_user_detail.xml" value="0.1" />
+        <entry key="..\:/Users/shruti/AndroidStudioProjects/P2P_App/app/src/main/res/layout/activity_user_profiles.xml" value="0.1" />
+        <entry key="..\:/Users/shruti/AndroidStudioProjects/P2P_App/app/src/main/res/layout/fragment_dashboard.xml" value="0.1" />
         <entry key="..\:/Users/shruti/AndroidStudioProjects/P2P_App/app/src/main/res/layout/fragment_profile.xml" value="0.22" />
         <entry key="..\:/Users/shruti/AndroidStudioProjects/P2P_App/app/src/main/res/layout/fragment_search.xml" value="0.1" />
         <entry key="..\:/Users/shruti/AndroidStudioProjects/P2P_App/app/src/main/res/layout/fragment_user.xml" value="0.1" />
         <entry key="..\:/Users/shruti/AndroidStudioProjects/P2P_App/app/src/main/res/layout/item_container_received_message.xml" value="0.1" />
         <entry key="..\:/Users/shruti/AndroidStudioProjects/P2P_App/app/src/main/res/layout/item_container_sent_message.xml" value="0.1" />
+        <entry key="..\:/Users/shruti/AndroidStudioProjects/P2P_App/app/src/main/res/layout/row_grid_items.xml" value="0.13333333333333333" />
+        <entry key="..\:/Users/shruti/AndroidStudioProjects/P2P_App/app/src/main/res/layout/row_users.xml" value="0.1796875" />
         <entry key="..\:/Users/shruti/AndroidStudioProjects/P2P_App/app/src/main/res/menu/bottom_nav.xml" value="0.1796875" />
       </map>
     </option>

@@ -61,11 +61,13 @@
             android:orientation="vertical">
 
                             <LinearLayout
+                                android:id="@+id/l1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical">
 
             <TextView
+                android:id="@+id/mymaterial"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-light"
@@ -80,16 +82,18 @@
                 android:background="@color/teal_200" />
                             </LinearLayout>
                                 <LinearLayout
+                                    android:id="@+id/l2"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="15dp"
                                     android:orientation="vertical">
 
             <TextView
+                android:id="@+id/Myprofilr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-light"
-                android:text="Upload"
+                android:text="My Profile"
                 android:textColor="#FFFF"
                 android:textSize="18sp" />
 
@@ -102,16 +106,18 @@
         </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/l3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/userprofiles"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="Library"
+                    android:text="User Profiles"
                     android:textColor="#FFFF"
                     android:textSize="18sp" />
 
@@ -124,16 +130,18 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/l4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:orientation="vertical">
 
                  <TextView
+                     android:id="@+id/upload"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="Unlock"
+                    android:text="Upload"
                     android:textColor="#FFFF"
                     android:textSize="18sp" />
 
@@ -146,12 +154,14 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/l5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/about"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"

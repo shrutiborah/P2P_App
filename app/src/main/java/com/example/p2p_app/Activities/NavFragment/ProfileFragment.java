@@ -1,12 +1,21 @@
 package com.example.p2p_app.Activities.NavFragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.p2p_app.Activities.EditprofileActivity;
+import com.example.p2p_app.Activities.MyMaterialsActivity;
+import com.example.p2p_app.Activities.MyProfileActivity;
+import com.example.p2p_app.Activities.RegisterActivity;
+import com.example.p2p_app.Activities.UploadActivity;
+import com.example.p2p_app.Activities.UserProfilesActivity;
 import com.example.p2p_app.R;
 
 /**
@@ -25,7 +34,8 @@ public class ProfileFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-//    Button EditProfile;
+    Button editprofile;
+    TextView upload;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -57,16 +67,6 @@ public class ProfileFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
-//        EditProfile = EditProfile.findViewById(R.id.btnEditProfile);
-
-//        EditProfile.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent myIntent=new Intent(ProfileFragment.this.getActivity(),ChatActivity.class);
-//                startActivity(myIntent);
-//
-//            }
-//        });
     }
 
 
@@ -75,6 +75,53 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+        View view = inflater.inflate(R.layout.fragment_profile, container, false);
+        TextView mymaterial = (TextView) view.findViewById(R.id.mymaterial);
+        TextView myprofile = (TextView) view.findViewById(R.id.Myprofilr);
+        TextView userprofiles = (TextView) view.findViewById(R.id.userprofiles);
+
+        TextView upload = (TextView) view.findViewById(R.id.upload);
+        upload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent=new Intent(ProfileFragment.this.getActivity(), UploadActivity.class);
+                startActivity(myIntent);
+            }
+        });
+
+        editprofile = editprofile.findViewById(R.id.btnEditProfile);
+        editprofile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent=new Intent(ProfileFragment.this.getActivity(), EditprofileActivity.class);
+                startActivity(myIntent);
+            }
+        });
+
+        mymaterial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent=new Intent(ProfileFragment.this.getActivity(), MyMaterialsActivity.class);
+                startActivity(myIntent);
+            }
+        });
+        myprofile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent=new Intent(ProfileFragment.this.getActivity(), MyProfileActivity.class);
+                startActivity(myIntent);
+            }
+        });
+
+        userprofiles.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent=new Intent(ProfileFragment.this.getActivity(), UserProfilesActivity.class);
+                startActivity(myIntent);
+            }
+        });
+
+        return view;
+
     }
 }

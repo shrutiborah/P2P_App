@@ -1,12 +1,16 @@
 package com.example.p2p_app.Activities.NavFragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.p2p_app.Activities.MaterialActivity;
+import com.example.p2p_app.Activities.RegisterActivity;
 import com.example.p2p_app.R;
 
 /**
@@ -27,8 +31,11 @@ public class DashboardFragment extends Fragment {
 //    RecyclerView recyclerView;
 //    ArrayList<datamodel> dataholder;
 
+    TextView cse, energy, bme, ece, civil, mechanical, electrical,chemical;
+
     public DashboardFragment() {
         // Required empty public constructor
+
     }
 
 //    private GridView catView;
@@ -58,7 +65,11 @@ public class DashboardFragment extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+
+
+
         }
+
     }
 
     @Override
@@ -66,36 +77,81 @@ public class DashboardFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
-//        recyclerView = view.findViewById(R.id.recview);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-//        dataholder = new ArrayList<>();
-//
-//        datamodel ob1 = new datamodel("Angular", "Web Application");
-//        dataholder.add(ob1);
-//        datamodel ob2 = new datamodel("Nodejs", "programming language");
-//        dataholder.add(ob2);
-//        datamodel ob3 = new datamodel("java", "programming language");
-//        dataholder.add(ob3);
-//        datamodel ob4 = new datamodel("python", "programming language");
-//        dataholder.add(ob4);
-//        datamodel ob5 = new datamodel("c++", "programming language");
-//        dataholder.add(ob5);
-//        datamodel ob6 = new datamodel("c++", "programming language");
-//        dataholder.add(ob6);
-//        datamodel ob7 = new datamodel("c++", "programming language");
-//        dataholder.add(ob7);
-//        datamodel ob8 = new datamodel("c++", "programming language");
-//        dataholder.add(ob8);
-//
-//
-//
-//
-//        recyclerView.setAdapter(new myadapter(dataholder));
-
-//        catView = view.findViewById(R.id.cat_grid);
+        TextView cse = (TextView) view.findViewById(R.id.cse);
+        TextView ece = (TextView) view.findViewById(R.id.ece);
+        TextView bme = (TextView) view.findViewById(R.id.bme);
+        TextView energy = (TextView) view.findViewById(R.id.energy);
+        TextView civil = (TextView) view.findViewById(R.id.civil);
+        TextView mechanical = (TextView) view.findViewById(R.id.mechanical);
+        TextView electrical = (TextView) view.findViewById(R.id.electrical);
+        TextView chemical = (TextView) view.findViewById(R.id.chemical);
 
 
+        cse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent=new Intent(DashboardFragment.this.getActivity(), MaterialActivity.class);
+                startActivity(myIntent);
+            }
+        });
+        ece.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent myIntent=new Intent(DashboardFragment.this.getActivity(), MaterialActivity.class);
+                startActivity(myIntent);
+            }
+        });
+        bme.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent myIntent=new Intent(DashboardFragment.this.getActivity(), MaterialActivity.class);
+                startActivity(myIntent);
+            }
+        });
+        energy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent myIntent=new Intent(DashboardFragment.this.getActivity(), MaterialActivity.class);
+                startActivity(myIntent);
+            }
+        });
+        civil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent myIntent=new Intent(DashboardFragment.this.getActivity(), MaterialActivity.class);
+                startActivity(myIntent);
+            }
+        });
+        chemical.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent myIntent=new Intent(DashboardFragment.this.getActivity(), MaterialActivity.class);
+                startActivity(myIntent);
+            }
+        });
+        mechanical.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent myIntent=new Intent(DashboardFragment.this.getActivity(), MaterialActivity.class);
+                startActivity(myIntent);
+            }
+        });
+        electrical.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent myIntent=new Intent(DashboardFragment.this.getActivity(), MaterialActivity.class);
+                startActivity(myIntent);
+            }
+        });
 
         return view;
+
     }
 }
