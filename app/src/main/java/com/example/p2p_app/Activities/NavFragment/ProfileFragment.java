@@ -1,5 +1,7 @@
 package com.example.p2p_app.Activities.NavFragment;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.p2p_app.Activities.EditprofileActivity;
@@ -17,6 +21,7 @@ import com.example.p2p_app.Activities.RegisterActivity;
 import com.example.p2p_app.Activities.UploadActivity;
 import com.example.p2p_app.Activities.UserProfilesActivity;
 import com.example.p2p_app.R;
+import com.example.p2p_app.chat.ChatActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -34,7 +39,13 @@ public class ProfileFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    Activity activity;
+    TextView mymaterial;
+    TextView myprofile;
+    TextView userprofiles;
+
     Button editprofile;
+    Button chat;
     TextView upload;
 
     public ProfileFragment() {
@@ -76,20 +87,26 @@ public class ProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
-        TextView mymaterial = (TextView) view.findViewById(R.id.mymaterial);
-        TextView myprofile = (TextView) view.findViewById(R.id.Myprofilr);
-        TextView userprofiles = (TextView) view.findViewById(R.id.userprofiles);
+        mymaterial = (TextView) view.findViewById(R.id.mymaterial);
+        myprofile = (TextView) view.findViewById(R.id.Myprofilr);
+        userprofiles = (TextView) view.findViewById(R.id.userprofiles);
+        editprofile = (Button) view.findViewById(R.id.btnEditProfile);
+        chat = (Button) view.findViewById(R.id.btnChat);
+        upload = (TextView) view.findViewById(R.id.upload);
 
-        TextView upload = (TextView) view.findViewById(R.id.upload);
-        upload.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent myIntent=new Intent(ProfileFragment.this.getActivity(), UploadActivity.class);
-                startActivity(myIntent);
-            }
-        });
+        return view;
 
-        editprofile = editprofile.findViewById(R.id.btnEditProfile);
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        activity = getActivity();
+        super.onAttach(context);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
         editprofile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -120,8 +137,19 @@ public class ProfileFragment extends Fragment {
                 startActivity(myIntent);
             }
         });
-
-        return view;
-
+        upload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent=new Intent(ProfileFragment.this.getActivity(), UploadActivity.class);
+                startActivity(myIntent);
+            }
+        });
+        chat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent=new Intent(ProfileFragment.this.getActivity(), ChatActivity.class);
+                startActivity(myIntent);
+            }
+        });
     }
 }

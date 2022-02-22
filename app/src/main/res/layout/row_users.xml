@@ -12,7 +12,7 @@
 
         <RelativeLayout
             android:layout_width="50dp"
-            android:background="@drawable/user_bg"
+            android:background="@drawable/snow_bg"
             android:layout_height="50dp">
             <TextView
                 android:id="@+id/prefix"
@@ -38,7 +38,7 @@
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="10dp"
             android:layout_centerVertical="true"
-            android:src="@drawable/ic_baseline_navigate_next_24"
+            android:src="@drawable/ic_baseline_arrow_back_ios_24"
             android:layout_height="wrap_content"/>
 
     </RelativeLayout>

@@ -1,5 +1,6 @@
 package com.example.p2p_app.Activities;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.WindowManager;
@@ -25,10 +26,6 @@ public class HomeActivity extends AppCompatActivity {
     NavigationView navigationView;
 
     BottomNavigationView bottomNavigationView;
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
