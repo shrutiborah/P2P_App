@@ -1,9 +1,5 @@
 package com.example.p2p_app.chat.repositories;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.media.Image;
 import android.util.Log;
-import android.widget.ImageView;
 
 import androidx.lifecycle.MutableLiveData;
 
@@ -15,8 +11,6 @@ import com.example.p2p_app.utility.SessionManager;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 
@@ -57,14 +51,13 @@ public class ChatRepository {
             public void onResponse(Call<List<Chat>> call, retrofit2.Response<List<Chat>> response) {
                 Log.e("Response", response.body() != null ? response.body().toString() : "null");
                 if (response.isSuccessful()) {
-                    chatList.clear(); //TODO: EFFICIENT?
-                    chatList.addAll(response.body()); //casted?? response model is same as json structure?
+                    chatList.clear();
+                    chatList.addAll(response.body());
                     Log.e("loadChat", "Chat loaded");
                 } else {
                     Log.e("loadChat", "Oops! something went wrong while loading the Chat");
                 }
             }
-
             @Override
             public void onFailure(Call<List<Chat>> call, Throwable t) {
                 Log.e("TAG", "Failed");

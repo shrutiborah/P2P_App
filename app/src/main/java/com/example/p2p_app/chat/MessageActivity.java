@@ -2,7 +2,6 @@ package com.example.p2p_app.chat;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageButton;
-import androidx.appcompat.widget.AppCompatImageView;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -12,12 +11,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.Toast;
-
-import com.example.p2p_app.Activities.LoginActivity;
 import com.example.p2p_app.R;
 import com.example.p2p_app.chat.adapters.MessageAdapter;
 import com.example.p2p_app.chat.models.Message;
@@ -28,8 +23,6 @@ import org.json.JSONObject;
 
 import java.util.List;
 import java.util.Objects;
-
-import okhttp3.WebSocket;
 
 public class MessageActivity extends AppCompatActivity {
 
@@ -64,7 +57,6 @@ public class MessageActivity extends AppCompatActivity {
         messageActivityViewModel.getMessageItems().observe(this, new Observer<List<Message>>() {
           @Override
           public void onChanged(List<Message> messages) {
-//              messageActivityViewModel.loadMessageItems(id);
               messageAdapter.notifyDataSetChanged();
           }
         });
@@ -106,11 +98,6 @@ public class MessageActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
             WebSocketService.getWebSocket().send(String.valueOf(jsonMessageItem));
-//            User userSender = new User(1);
-//            User userReceiver = new User(2);
-//            Chat messageItem = new Chat(userSender, userReceiver, message);
-//            webSocket.send(String.valueOf(jsonMessageItem));
-//            adapter.addItem(messageItem);
         }
         editText.setText(null);
     }

@@ -14,9 +14,6 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.p2p_app.R;
 import com.example.p2p_app.chat.models.Chat;
-import com.example.p2p_app.chat.models.Message;
-import com.example.p2p_app.chat.repositories.ChatRepository;
-import com.example.p2p_app.utility.Constants;
 
 import java.util.List;
 
@@ -52,8 +49,6 @@ public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         Glide.with(context)
                 .setDefaultRequestOptions(defaultOptions)
-//                .load(chatItems.get(position).gettUser().getProfileImage() == null? R.drawable.profile : chatItems.get(position).gettUser().getProfileImage())
-//                .load(Constants.BASE_URL + ChatRepository.getInstance().getProfile(chatItems.get(position).getUser().getId()).getUserAvatar())
                 .load(R.drawable.ic_baseline_person_24)
                 .circleCrop()
                 .into(((ViewHolder) holder).profileImageView);
@@ -90,7 +85,6 @@ public class ViewHolder extends  RecyclerView.ViewHolder implements View.OnClick
         nameTextView = (TextView) itemView.findViewById(R.id.nameTextView);
         profileImageView = (ImageView) itemView.findViewById(R.id.profileImageView);
     }
-
 
     @Override
     public void onClick(View view) {

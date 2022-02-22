@@ -43,10 +43,6 @@ public interface UserService {
     @POST("/api/auth/register/")
     Call<RegisterResponse> registerUser(@Body RegisterRequest registerRequest);
 
-//    @POST("/auth/login/")
-//    Call<LoginResponse> loginUser(@Body LoginRequest loginRequest);
-
-//    @FormUrlEncoded
     @POST(Constants.LOGIN_URL)
     Call<LoginResponse> login(@Body LoginRequest loginRequest);
 
@@ -96,7 +92,7 @@ public interface UserService {
     @GET(Constants.PROFILE + "{user_id}")
     Call<Profile> getProfile(@Path("user_id") Integer user_id, @Header("Authorization") String authHeader);
 
-
-
+    @GET("{image_path}")
+    Call<ResponseBody> getProfileImage(@Path("image_path") String image_path, @Header("Authorization") String authHeader);
 }
 

@@ -11,7 +11,6 @@ import androidx.lifecycle.ViewModel;
 import com.example.p2p_app.chat.models.Message;
 import com.example.p2p_app.chat.repositories.MessageRepository;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 

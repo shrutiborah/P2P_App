@@ -1,5 +1,4 @@
 package com.example.p2p_app.utility;
-import android.content.Context;
 import android.util.Log;
 
 import androidx.annotation.NonNull;

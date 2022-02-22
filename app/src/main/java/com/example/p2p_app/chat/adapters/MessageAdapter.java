@@ -7,32 +7,24 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
-
-
 import com.example.p2p_app.R;
 import com.example.p2p_app.chat.data.MyProfile;
-import com.example.p2p_app.chat.models.Attachments;
 import com.example.p2p_app.chat.models.Message;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-
     private static ClickListener clickListener;
     private  List<Message> messageItems = new ArrayList<>();
     private final Context context;
     String TAG = "MessageAdapter ";
-
     public MessageAdapter(Context context, List<Message> messageItems) {
         this.messageItems = messageItems;
         this.context = context;
     }
-
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -44,18 +36,14 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         Log.e(TAG, "MyProfile.getInstance().getId(): " + String.valueOf(MyProfile.getInstance().getId()) );
 
-
         Log.e(TAG, "Message Item: " + messageItems.get(position).getMessage());
         Log.e(TAG, "Message Item: " + messageItems.get(position).getAttachments());
         Log.e(TAG, "Message Item: " + messageItems.get(position).getDatetime());
         Log.e(TAG, "Message Item: " + messageItems.get(position).getReceiver().getId());
 
-
         if(messageItems.get(position).getReceiver().getId() == MyProfile.getInstance().getId()) {
             ((ViewHolder)holder).sentMessageCardView.setVisibility(View.GONE);
-
-            ((ViewHolder)holder).receivedMessageCardView.setVisibility(View.VISIBLE); //added
-
+            ((ViewHolder)holder).receivedMessageCardView.setVisibility(View.VISIBLE);
             ((ViewHolder)holder).receivedMessageTextView.setText(messageItems.get(position).getMessage());
             ((ViewHolder)holder).receivedDateTimeTextView.setText(messageItems.get(position).getDatetime());
             if ((messageItems.get(position).getAttachments()).size() != 0) {
@@ -63,19 +51,14 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             } else {
                 ((ViewHolder)holder).receivedAttachmentTitleTextView.setVisibility(View.GONE);
                 ((ViewHolder)holder).receivedAttachmentImageView.setVisibility(View.GONE);
-
                 ((ViewHolder)holder).sentAttachmentTitleTextView.setVisibility(View.VISIBLE);
                 ((ViewHolder)holder).sentAttachmentImageView.setVisibility(View.VISIBLE);
-
-
             }
 
 
         } else {
             ((ViewHolder)holder).receivedMessageCardView.setVisibility(View.GONE);
-
-            ((ViewHolder)holder).sentMessageCardView.setVisibility(View.VISIBLE); //added
-
+            ((ViewHolder)holder).sentMessageCardView.setVisibility(View.VISIBLE);
             ((ViewHolder) holder).sentMessageTextView.setText(messageItems.get(position).getMessage());
             ((ViewHolder)holder).sentDateTimeTextView.setText(messageItems.get(position).getDatetime());
             if((messageItems.get(position).getAttachments()).size() != 0){
@@ -84,7 +67,6 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             else {
                ((ViewHolder)holder).sentAttachmentTitleTextView.setVisibility(View.GONE);
                ((ViewHolder)holder).sentAttachmentImageView.setVisibility(View.GONE);
-
                 ((ViewHolder)holder).receivedAttachmentTitleTextView.setVisibility(View.VISIBLE);
                 ((ViewHolder)holder).receivedAttachmentImageView.setVisibility(View.VISIBLE);
             }
@@ -107,13 +89,7 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         private TextView receivedMessageTextView, sentMessageTextView, sentDateTimeTextView, receivedDateTimeTextView, sentAttachmentTitleTextView, receivedAttachmentTitleTextView;
         ImageView sentAttachmentImageView, receivedAttachmentImageView;
 
-        public ViewHolder(@NonNull View itemView
-//                          CardView receivedMessageCardView, CardView sentMessageCardView,
-//                          TextView receivedMessageTextView, TextView sentMessageTextView,
-//                          TextView sentDateTimeTextView, TextView receivedDateTimeTextView,
-//                          TextView sentAttachmentTitleTextView, TextView receivedAttachmentTitleTextView,
-//                          ImageView sentAttachmentImageView, ImageView receivedAttachmentImageView
-                          )
+        public ViewHolder(@NonNull View itemView)
         {
             super(itemView);
             this.receivedMessageCardView = itemView.findViewById(R.id.receive_card_view);
@@ -128,21 +104,9 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             this.receivedAttachmentImageView = itemView.findViewById(R.id.received_attachment_image_view);
         }
 
-//        public ViewHolder(View itemView) {
-//            super(itemView);
-//            itemView.setOnClickListener(this);
-//            receiveMessageCardView = itemView.findViewById(R.id.receive_card_view);
-//            sendMessageCardView = itemView.findViewById(R.id.send_card_view);
-//            receiveMessageTextView = itemView.findViewById(R.id.receive_text_view);
-//            sendMessageTextView = itemView.findViewById(R.id.send_text_view);
-//
-//        }
-
-
         @Override
         public void onClick(View view) {
             clickListener.onItemClick(getAdapterPosition(), view);
-
         }
     }
     public void setOnItemClickListener(ClickListener clickListener) {

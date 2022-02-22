@@ -30,7 +30,6 @@ public class RetrofitClient {
 
     private OkHttpClient okhttpClient() {
         return new OkHttpClient.Builder()
-//                .addInterceptor(new AuthInterceptor())
                 .build();
     }
 }

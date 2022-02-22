@@ -10,16 +10,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 import com.example.p2p_app.R;
 import com.example.p2p_app.chat.adapters.ChatAdapter;
 import com.example.p2p_app.chat.adapters.ClickListener;
 import com.example.p2p_app.chat.data.MyProfile;
 import com.example.p2p_app.chat.models.Chat;
-import com.example.p2p_app.chat.models.ChatUser;
 import com.example.p2p_app.chat.viewmodel.ChatActivityViewModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
