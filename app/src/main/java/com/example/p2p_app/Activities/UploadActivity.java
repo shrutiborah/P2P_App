@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.p2p_app.R;
+import com.example.p2p_app.utility.RetrofitClient;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -32,11 +33,11 @@ public class UploadActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_upload);
 
-        textView = findViewById(R.id.textView);
-        btnSelect = findViewById(R.id.btnSelect);
-        btnUpload = findViewById(R.id.btnUpload);
+        textView = this.findViewById(R.id.uploadTextView);
+        btnSelect = this.findViewById(R.id.btnSelect);
+        btnUpload = this.findViewById(R.id.btnUpload);
 
         btnSelect.setOnClickListener(new View.OnClickListener() {
             @Override

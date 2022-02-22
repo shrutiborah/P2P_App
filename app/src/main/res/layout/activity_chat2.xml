@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
-    android:background="@color/design_default_color_primary"
-    tools:context=".Activities.ChatActivity">
+    android:background="@color/purple_200"
+    tools:context=".chat.MessageActivity">
 
     <View
         android:id="@+id/viewBackground"
@@ -61,16 +61,16 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/chatRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:clipToPadding="false"
-        android:orientation="vertical"
-        android:overScrollMode="never"
-        android:padding="20dp"
-        android:visibility="gone"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toBottomOf="@id/viewBackground"
-        app:layout_constraintTop_toBottomOf="@id/imageBack"/>
-
+        android:layout_height="match_parent"
+        android:padding="3dp"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/inputMessage"
+        app:layout_constraintEnd_toEndOf="@+id/viewBackground"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/purple_200"
+        android:elevation="1dp"
+        android:outlineProvider="bounds"
+        />
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="25dp"
@@ -78,9 +78,10 @@
         app:layout_constraintBottom_toBottomOf="@id/viewBackground"
         app:layout_constraintEnd_toEndOf="@id/viewBackground"
         app:layout_constraintStart_toStartOf="@id/viewBackground"
-        app:layout_constraintTop_toTopOf="@id/viewBackground"/>
-
-
+        app:layout_constraintTop_toTopOf="@id/viewBackground"
+        android:visibility="visible"
+        android:indeterminate="true"
+        />
 
     <FrameLayout
         android:id="@+id/layoutsend"
@@ -89,18 +90,27 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="12dp"
-        android:background="@drawable/background_chat_input"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <androidx.appcompat.widget.AppCompatImageView
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/send"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="4dp"
             android:layout_marginLeft="4dp"
             android:padding="8dp"
             android:src="@drawable/ic_send"
+            android:background="@color/purple_200"
             android:tint="@color/white"/>
+
+<!--        <Button-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:text="P"-->
+
+<!--            android:textAllCaps="true"-->
+<!--            android:id="@+id/buttonPress"/>-->
 
     </FrameLayout>
 
@@ -109,12 +119,10 @@
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginBottom="12dp"
         android:background="@drawable/background_chat_input"
-        android:hint="Type_a_message"
+        android:hint="Enter a message"
         android:imeOptions="actionDone"
         android:importantForAutofill="no"
         android:inputType="text"
@@ -124,9 +132,7 @@
         android:textColorHint="@color/material_on_primary_emphasis_medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/layoutsend"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

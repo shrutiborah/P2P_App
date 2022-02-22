@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,6 +13,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.p2p_app.R;
+import com.example.p2p_app.utility.UserService;
+
 import retrofit2.Callback;
 import retrofit2.Call;
 import retrofit2.Response;
@@ -21,6 +24,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class EditprofileActivity extends AppCompatActivity {
 
     String url = "http://10.0.2.2:8000/";
+    private final String TAG = "EDIT PROFILE ACTIVITY";
 
     // creating our variables for our views such
     // as text view, button and progress
@@ -106,6 +110,7 @@ public class EditprofileActivity extends AppCompatActivity {
                     // we are getting a response from our body and
                     // passing it to our modal class.
                     DataModal responseFromAPI = response.body();
+                    Log.e(TAG, responseFromAPI != null ? responseFromAPI.toString() : "null");
 
                     // on below line we are getting our data from modal class
                     // and adding it to our string.

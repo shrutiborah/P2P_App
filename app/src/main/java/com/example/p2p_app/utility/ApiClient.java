@@ -1,4 +1,4 @@
-package com.example.p2p_app.Activities;
+package com.example.p2p_app.utility;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -26,8 +26,7 @@ public class ApiClient {
     }
 
     public static UserService getService(){
-        UserService userService = getRetrofit().create(UserService.class);
 
-        return userService;
+        return getRetrofit().create(UserService.class);
     }
 }
